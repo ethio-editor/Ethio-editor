@@ -1,23 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel</title>
+  <title>Admin Panel 🛠️</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1 class="title">Admin Panel 🧑‍💼</h1>
-  <input id="job-title" placeholder="📌 Title" />
-  <textarea id="job-description" rows="4" placeholder="📝 Description"></textarea>
-  <input id="job-expiry" placeholder="📅 Expiry Date" />
-  <input id="job-salary" placeholder="💰 Salary" />
-  <button id="post-job" class="nav-btn">✅ Post Job</button>
+  <header>
+    <h1 class="title">Admin Panel 🛠️</h1>
+  </header>
 
-  <h3>Last Delivery 📦</h3>
-  <div id="last-delivery" class="empty-state">Loading...</div>
+  <main class="content-container">
+    <!-- JOB FORM -->
+    <section class="form-section">
+      <h2>Post a New Job</h2>
+      <input
+        id="client-username"
+        type="text"
+        placeholder="👤 Client Telegram Username"
+      />
+      <input id="job-title"        type="text" placeholder="📌 Job Title" />
+      <textarea
+        id="job-description"
+        rows="4"
+        placeholder="📝 Job Description"
+      ></textarea>
+      <input id="job-expiry"       type="date" />
+      <input
+        id="job-salary"
+        type="text"
+        placeholder="💰 Salary (e.g. 1500 ETB)"
+      />
+      <!-- note type="button" so it never submits a form by default -->
+      <button
+        id="post-job"
+        type="button"
+        class="nav-btn"
+      >
+        ✅ Post Job
+      </button>
+    </section>
+
+    <!-- DELIVERED PROJECTS -->
+    <section class="delivered-section">
+      <h2>Delivered Projects 📦</h2>
+      <div id="delivered-jobs" class="delivered-list">
+        <!-- JS will inject cards here -->
+      </div>
+    </section>
+  </main>
 
   <script type="module" src="firebase.js"></script>
   <script type="module" src="admin.js"></script>
 </body>
 </html>
+
